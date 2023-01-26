@@ -1,11 +1,8 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Cards=(data)=>{
-  // console.log(data);
-  // console.log(data.weight);
     return (
         <Card style={{ width: '8rem' }}>
       <Card.Img variant="top" src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${data.data['id']}.png`} />
@@ -16,7 +13,6 @@ const Cards=(data)=>{
           <br />
           Height: {data.data['height']}
         </Card.Text>
-        {/* <Button variant="primary">Go somewhere</Button> */}
       </Card.Body>
     </Card>
     );

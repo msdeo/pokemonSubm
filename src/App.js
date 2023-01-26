@@ -14,6 +14,9 @@ class App extends Component {
 
   handleChange(event){
     this.setState({value: event.target.value});
+    this.callBackendAPI(this.state.value)
+        .then(res => this.setState({item: res.data}))
+        .catch(err => console.log(err));
   }
   handleSubmit(event){
     this.callBackendAPI(this.state.value)
@@ -50,7 +53,7 @@ class App extends Component {
       <div className='App-intro'>{
       this.state.item
         ?<Cards data={this.state.item}/>
-        :"not set"
+        :"Please type a pokemon's name in search box"
         }</div>
 
    
