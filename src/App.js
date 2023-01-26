@@ -24,11 +24,6 @@ class App extends Component {
         .catch(err => console.log(err));
     event.preventDefault();
   }
-  // componentDidMount() {
-  //     this.callBackendAPI(this.state.value)
-  //       .then(res => this.setState({item: res.data}))
-  //       .catch(err => console.log(err));
-  // }
 
   callBackendAPI = async(req,res) =>{
     const response = await fetch('/pokemon/'+req);
@@ -49,7 +44,6 @@ class App extends Component {
         </label>
         <input type='submit' value="submit" />
        </form>
-      {/* <p className='App-intro'>{this.state.item?"set "+ this.state.item['weight']: "not set"}</p> */}
       <div className='App-intro'>{
       this.state.item
         ?<Cards data={this.state.item}/>
